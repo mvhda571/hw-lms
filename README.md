@@ -17,6 +17,12 @@ SQLite ma'lumotlar bazasi birinchi ishga tushganda `parking.sqlite` faylida yara
 
 ## API
 
+- `GET /api/cars` — mashinalar ro'yxati.
+- `POST /api/cars` — JSON obyekt yuborib mashina yaratish; yangi `id` va mashina `201` javobida qaytadi.
+- `GET /api/cars/:id` — bitta mashinani olish.
+- `PUT /api/cars/:id` — mashina ma'lumotlarini JSON obyekt bilan to'liq almashtirish.
+- `DELETE /api/cars/:id` — mashinani o'chirish (`204`); o'chirilgandan keyingi GET `404` qaytaradi.
+- Noto'g'ri URL, masalan `/api/cras`, `404` qaytaradi.
 - `GET /api/spaces` — joylar va band/bo'sh holati.
 - `POST /api/entries` — `{ "spaceId": 1, "vehicleNumber": "01 A 123 BC" }`.
   - Mashina raqami bo'sh bo'lsa `400` va `Raqamni kiriting`.

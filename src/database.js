@@ -12,6 +12,13 @@ function createDatabase(path = process.env.DATABASE_PATH || 'parking.sqlite') {
     )
   `);
 
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS cars (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      data TEXT NOT NULL
+    )
+  `);
+
   const count = db.prepare('SELECT COUNT(*) AS count FROM parking_spaces').get();
   if (count.count === 0) {
     const insertSpace = db.prepare('INSERT INTO parking_spaces (label) VALUES (?)');
