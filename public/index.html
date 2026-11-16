@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Avtoturargoh nazorati</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="panel">
+      <header class="panel-header">
+        <div>
+          <p class="eyebrow">QOROVUL PANELI</p>
+          <h1>Avtoturargoh nazorati</h1>
+          <p class="subtitle">Mashina raqamini kiriting va bo‘sh joyni tanlang.</p>
+        </div>
+        <span class="live-status"><span></span> Tizim faol</span>
+      </header>
+
+      <section class="card entry-card" aria-labelledby="entry-title">
+        <h2 id="entry-title">Mashinani kiritish</h2>
+        <form id="entry-form">
+          <label for="vehicle-number">Mashina raqami</label>
+          <input id="vehicle-number" name="vehicleNumber" type="text"
+            placeholder="01 A 123 BC" autocomplete="off">
+          <label for="space-id">Joy</label>
+          <select id="space-id" name="spaceId" required></select>
+          <button type="submit">Kiritishni tasdiqlash</button>
+          <p id="message" class="message" role="alert" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="card spaces-card" aria-labelledby="spaces-title">
+        <div class="section-heading">
+          <div>
+            <h2 id="spaces-title">Joylar holati</h2>
+            <p class="subtitle">Band joy tanlansa, server so‘rovni rad etadi.</p>
+          </div>
+          <button id="refresh-button" class="refresh-button" type="button">Yangilash</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Joy</th><th>Holati</th><th>Mashina raqami</th></tr>
+            </thead>
+            <tbody id="spaces-list"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

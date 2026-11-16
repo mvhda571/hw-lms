@@ -1,0 +1,17 @@
+{
+  "name": "parking-guard-panel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Parking entry API and guard panel",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
